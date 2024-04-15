@@ -10,7 +10,7 @@ export default function SearchBar({ placeholder, buttonText, margin }) {
       <input
         type="search"
         placeholder={placeholder}
-        className="p-1 active:border-0"
+        className="p-1 active:border-0 active:outline-0"
       />
       <button className="h-full rounded-md bg-primary px-2 py-1">
         {buttonText}

@@ -26,6 +26,7 @@ module.exports = {
       success: "#0CC562",
       "success-light": "#92F2BF",
       "success-dark": "#00994C",
+      hero: "#F2F0FF",
     },
   },
   plugins: [],

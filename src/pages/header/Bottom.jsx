@@ -18,7 +18,7 @@ const SearchIcon = (
 
 export default function BottomHeader() {
   return (
-    <div className="flex h-fit w-full items-center border-2 border-solid border-black px-7 py-3">
+    <div className="items-centerpx-7 flex h-fit w-full py-3">
       <div className="flex items-center gap-12">
         <svg
           className="ml-10"
