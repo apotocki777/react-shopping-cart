@@ -1,16 +1,13 @@
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 export default function TopHeader() {
   return (
     <div className="flex items-center justify-between bg-tertiary px-7 py-2 font-josefin text-lg text-white">
       <div className="ml-10 flex items-center gap-3">
-        <PhoneInTalkIcon fontSize="small" />
-        <p>something@something.com</p>
         <MailOutlineIcon fontSize="small" />
+        <p className="mr-5">something@something.com</p>
+        <PhoneInTalkIcon fontSize="small" />
         <p>0049-333-333-333</p>
       </div>
 

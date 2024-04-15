@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Header from "./pages/header/Header";
+import router from "./Router";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="mx-auto flex max-w-screen-xl">
-      <Header></Header>
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;
