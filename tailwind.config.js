@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         josefin: ["Josefin sans", "sans-serrif"],
-        lato: ["lato"],
+        lato: ["lato", "sans-serif"],
       },
     },
     colors: {

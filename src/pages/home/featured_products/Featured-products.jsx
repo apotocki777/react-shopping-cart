@@ -7,7 +7,6 @@ export default function FeaturedProducts() {
   const [currSlide, setCurrSlide] = useState(0);
   const data = useOutletContext();
   const featuredItems = data.slice(0, 12);
-  console.log(featuredItems[0]);
   const carouselSettings = {
     dots: true,
     infinite: true,
