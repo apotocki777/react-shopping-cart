@@ -11,9 +11,6 @@ export default function Hero() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // beforeChange: (current, next) => {
-    //   setCurrSlide(next);
-    // },
     afterChange: (next) => {
       setCurrSlide(next);
     },

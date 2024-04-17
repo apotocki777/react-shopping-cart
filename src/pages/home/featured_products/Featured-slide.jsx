@@ -62,9 +62,13 @@ export default function FeaturedSlide({ item }) {
         </div>
       </div>
       <div className="flex w-full flex-col items-center justify-center gap-3 py-4">
-        <p className="mb-2">{item.name}</p>
-        <p className="mb-[-10px]">{"Code - " + item.code}</p>
-        <p>{"$" + item.price}</p>
+        <p className="mb-2 text-lg font-bold text-primary ">{item.name}</p>
+        <p className="mb-[-10px] text-sm font-normal text-grey-3">
+          {"Code - " + item.code}
+        </p>
+        <p className="text-[16px] font-bold tracking-wide text-black">
+          {"$" + item.price}
+        </p>
       </div>
     </div>
   );
