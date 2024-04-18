@@ -57,7 +57,7 @@ export default function FeaturedSlide({ item }) {
           alt={item.description}
           className="rounded-md"
         />
-        <div className="absolute left-[50%] top-40 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
+        <div className="absolute left-[50%] top-36 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
           <button>View Details</button>
         </div>
       </div>

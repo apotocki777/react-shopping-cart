@@ -2,7 +2,7 @@ export default function LeatestProductCard({ item }) {
   return (
     <div>
       <div className="group relative">
-        <div className="absolute left-2 top-44 hidden items-center gap-5 group-hover:flex group-hover:flex-col">
+        <div className="absolute left-4 top-40 hidden items-center gap-5 group-hover:flex group-hover:flex-col">
           <div className="rounded-full bg-grey-2 p-2">
             <button className="flex">
               <svg
