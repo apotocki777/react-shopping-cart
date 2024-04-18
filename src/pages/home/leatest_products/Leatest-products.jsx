@@ -25,7 +25,7 @@ export default function LeatestProducts() {
   console.log(chosenData);
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center px-20">
       <h2 className="mt-10 text-5xl font-bold text-black">Leatest Products</h2>
       <ul className="mb-14 mt-4 flex gap-10">
         <li

@@ -41,7 +41,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-hero">
+    <div className="bg-hero px-20">
       <Slider {...carouselSettings} initialSlide={currSlide}>
         <HeroSlide></HeroSlide>
         <HeroSlide></HeroSlide>

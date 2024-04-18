@@ -55,7 +55,7 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <div className="flex h-fit flex-col justify-center">
+    <div className="flex h-fit flex-col justify-center px-20">
       <h2 className="mb-10 mt-24 self-center text-5xl font-bold">
         Featured Products
       </h2>
