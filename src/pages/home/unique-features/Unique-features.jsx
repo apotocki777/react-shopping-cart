@@ -3,7 +3,7 @@ import Button from "../../../utils/Button";
 import { useOutletContext } from "react-router-dom";
 
 export default function UniqueFeatures() {
-  const data = useOutletContext();
+  const [data] = useOutletContext();
 
   let sofa = data.find((el) => el.name === "IKEA Ektorp Sofa");
 

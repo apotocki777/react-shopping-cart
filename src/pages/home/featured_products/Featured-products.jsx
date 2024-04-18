@@ -5,7 +5,7 @@ import FeaturedSlide from "./Featured-slide";
 
 export default function FeaturedProducts() {
   const [currSlide, setCurrSlide] = useState(0);
-  const data = useOutletContext();
+  const [data] = useOutletContext();
   const featuredItems = data.slice(0, 12);
   const carouselSettings = {
     dots: true,

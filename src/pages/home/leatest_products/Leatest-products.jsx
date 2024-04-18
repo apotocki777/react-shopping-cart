@@ -5,7 +5,7 @@ import LeatestProductCard from "./Leates-product-card";
 export default function LeatestProducts() {
   const [category, setCategory] = useState("new");
 
-  const data = useOutletContext();
+  const [data] = useOutletContext();
   let chosenData = [...data];
 
   if (category === "new") {
