@@ -3,6 +3,8 @@ import FeaturedProducts from "./featured_products/Featured-products";
 import LeatestProducts from "./leatest_products/Leatest-products";
 import UniqueFeatures from "./unique-features/Unique-features";
 import TrendingItems from "./trending_items/Trending-items";
+import DiscountItems from "./discount_item/Discount-items";
+import TopCategories from "./top_categories/Top-categories";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -13,6 +15,8 @@ export default function Home() {
       <LeatestProducts></LeatestProducts>
       <UniqueFeatures></UniqueFeatures>
       <TrendingItems></TrendingItems>
+      <DiscountItems></DiscountItems>
+      <TopCategories></TopCategories>
     </>
   );
 }
