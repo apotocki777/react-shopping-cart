@@ -6,6 +6,9 @@ module.exports = {
         josefin: ["Josefin sans", "sans-serrif"],
         lato: ["lato", "sans-serif"],
       },
+      backgroundImage: {
+        banner: "url('/src/resources/images/banner-background.png')",
+      },
     },
     colors: {
       white: "#CCCCCC",
