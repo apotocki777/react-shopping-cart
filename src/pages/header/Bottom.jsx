@@ -53,10 +53,10 @@ export default function BottomHeader() {
         <nav>
           <ul className="flex gap-5 pt-3 font-josefin text-base font-normal">
             <li>
-              <NavLink>Home</NavLink>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <NavLink>Products</NavLink>
+              <NavLink to={"products"}>Products</NavLink>
             </li>
             <li>
               <NavLink>Blog</NavLink>
