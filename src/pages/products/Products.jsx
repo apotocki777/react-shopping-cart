@@ -3,6 +3,7 @@ import FilterTab from "./Filter_tab";
 import { useState } from "react";
 import ViewSettings from "./View-settings";
 import filterProducts from "../../utils/filterProducts";
+import ProductList from "./product_list/Product-list";
 
 export default function ProductPage() {
   const [productData, filterData] = useOutletContext();
@@ -47,8 +48,7 @@ export default function ProductPage() {
   };
 
   const filteredData = filterProducts(productData, filters);
-  console.log(filteredData);
-  console.log(viewOptions);
+  console.log(filteredData[0]);
 
   return (
     <main className="flex flex-col items-center justify-center py-10">
@@ -68,6 +68,10 @@ export default function ProductPage() {
             onChange={handleViewOptions}
             viewOptions={viewOptions}
           ></ViewSettings>
+          <ProductList
+            ProductList={filteredData}
+            viewOptions={viewOptions}
+          ></ProductList>
         </div>
       </div>
     </main>
