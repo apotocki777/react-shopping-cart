@@ -11,7 +11,7 @@ export default function FilterTab({ onChecked }) {
   const categories = filterData.category.values;
 
   return (
-    <div className="filter-tab w-fit">
+    <div className="filter-tab mt-8 w-fit">
       <div className="w-fit">
         <h3 className="w-fitw-fit  border-b-2 border-solid border-black text-[20px] font-bold text-black">
           Product Brand
