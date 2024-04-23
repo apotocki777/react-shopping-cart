@@ -1,6 +1,5 @@
 const filterProducts = (data, filters) => {
   let filteredData = [...data];
-  console.log(filters);
 
   for (const [key, value] of Object.entries(filters)) {
     if (key === "rating" && value.length > 0) {

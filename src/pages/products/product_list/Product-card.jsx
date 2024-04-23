@@ -25,7 +25,7 @@ export default function ProductCard({ product, view }) {
                   key={index}
                   className={
                     "h-6 w-6 " +
-                    (index < product.rating.value - 1
+                    (index < product.rating.value
                       ? "fill-secondary"
                       : "fill-grey-2")
                   }

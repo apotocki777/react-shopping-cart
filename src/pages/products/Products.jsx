@@ -8,6 +8,8 @@ import ProductList from "./product_list/Product-list";
 export default function ProductPage() {
   const [productData, filterData] = useOutletContext();
 
+  const [page, setPage] = useState(1);
+
   const [viewOptions, setViewOptions] = useState({
     perPage: 10,
     sortBy: "priceHighToLow",
@@ -36,6 +38,8 @@ export default function ProductPage() {
         ),
       });
     }
+
+    setPage(1);
   };
 
   const handleViewOptions = (e) => {
@@ -43,12 +47,25 @@ export default function ProductPage() {
       ...viewOptions,
       [e.name]: e.value,
     });
-    console.log(e);
-    console.log(viewOptions);
+    // console.log(e);
+    // console.log(viewOptions);
   };
 
+  const onPageChange = (e) => {
+    setPage(Number.parseInt(e.target.value));
+  };
+
+  console.log(page);
+
   const filteredData = filterProducts(productData, filters);
-  console.log(filteredData[0]);
+  const numberOfPages = Math.ceil(filteredData.length / viewOptions.perPage);
+  const arrOfPages = [];
+
+  for (let i = 0; i < numberOfPages; i++) {
+    arrOfPages.push(i + 1);
+  }
+
+  // console.log(filteredData[0]);
 
   return (
     <main className="flex flex-col items-center justify-center py-10">
@@ -71,8 +88,28 @@ export default function ProductPage() {
           <ProductList
             ProductList={filteredData}
             viewOptions={viewOptions}
+            page={page}
           ></ProductList>
         </div>
+      </div>
+      <div className="ml-auto mt-10 flex gap-4">
+        {arrOfPages.map((num) => {
+          return (
+            <button
+              key={num}
+              value={num}
+              onClick={onPageChange}
+              className={
+                "h-10 w-10 rounded-md text-[16px] " +
+                (num === page
+                  ? "bg-primary text-[#ffff]"
+                  : "bg-[#ffff] text-black")
+              }
+            >
+              {num}
+            </button>
+          );
+        })}
       </div>
     </main>
   );
