@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+
 export default function ProductCard({ product, view }) {
   const columnStyles = "grid grid-cols-[1fr_3fr] gap-4 p-4 shadow-xl";
   const gridStyles = "grid grid-cols-1 gap-4 p-4 shadow-xl";
   return (
     <div className={view === "column" ? columnStyles : gridStyles}>
-      <div className="">
-        <img src={product.imageSet[0]} alt={product.name} />
-      </div>
+      <Link to={product.id}>
+        <div className="cursor-pointer">
+          <img src={product.imageSet[0]} alt={product.name} />
+        </div>
+      </Link>
       <div
         className={
           "flex flex-col px-2 " + (view === "column" ? "gap-2" : "gap-4")
@@ -17,7 +21,11 @@ export default function ProductCard({ product, view }) {
             (view === "column" ? "flex-row" : "flex-col gap-1")
           }
         >
-          <p className="text-[20px] font-bold">{product.name}</p>
+          <Link to={product.id}>
+            <p className="text-[20px] font-bold hover:underline">
+              {product.name}
+            </p>
+          </Link>
           <div className="flex">
             {[1, 2, 3, 4, 5].map((item, index) => {
               return (

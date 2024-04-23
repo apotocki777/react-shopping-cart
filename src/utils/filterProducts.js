@@ -11,13 +11,14 @@ const filterProducts = (data, filters) => {
     } else if (key === "discountPercentage" && value.length > 0) {
       filteredData = filteredData.filter((item) => {
         return value.some((discount) => {
-          return +discount === item[key];
+          return +discount === Math.round(item[key] / 10) * 10;
         });
       });
     } else if (key === "price" && value.length > 0) {
       let splitted = value.map((range) => {
         return range.split("-");
       });
+
       splitted = splitted.map((range) => {
         return range.map((val) => {
           val = val.match(/\d+/g);
