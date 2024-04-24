@@ -14,7 +14,7 @@ export default function RelatedProducts({ product }) {
       <h3 className="ml-8 mt-10 text-left text-[36px] font-bold">
         Related Products
       </h3>
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-4">
         {relatedProducts.map((item) => {
           return <FeaturedSlide item={item}></FeaturedSlide>;
         })}
