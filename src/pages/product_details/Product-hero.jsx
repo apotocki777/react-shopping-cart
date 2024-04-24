@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Button from "../../utils/Button";
+import { useOutletContext } from "react-router-dom";
+
 export default function ProductHero({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.imageSet[0]);
+  const [, , , addToCart] = useOutletContext();
 
   const handleImageClick = (e) => {
     setSelectedImage(e.target.src);
@@ -69,7 +72,9 @@ export default function ProductHero({ product }) {
             {product.description}
           </p>
           <div className="flex items-center gap-6">
-            <Button>Add To Cart</Button>
+            <Button product={product} onClick={addToCart}>
+              Add To Cart
+            </Button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
