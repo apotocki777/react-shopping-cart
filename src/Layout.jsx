@@ -5,6 +5,58 @@ import { useState, useEffect } from "react";
 export default function Layout() {
   const [productData, setProductData] = useState(null);
   const [filterData, setFilterData] = useState(null);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    cart.some((item) => item.id === product.id)
+      ? setCart(
+          cart.map((item) =>
+            item.id === product.id
+              ? {
+                  ...item,
+                  quantity: item.quantity + 1,
+                  totalPrice: item.totalPrice + item.price,
+                }
+              : item
+          )
+        )
+      : setCart([
+          ...cart,
+          {
+            name: product.name,
+            id: product.id,
+            brand: product.brand,
+            price: product.price,
+            totalPrice: product.price,
+            quantity: 1,
+            imageSet: product.imageSet,
+          },
+        ]);
+  };
+
+  const removeFromCart = (product) => {
+    let productInCart = cart.find((el) => el.id === product.id);
+    if (productInCart.quantity === 1) {
+      let newCart = [...cart].filter((item) => item.id !== product.id);
+      setCart(newCart);
+    } else {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+                totalPrice: item.totalPrice - item.price,
+              }
+            : item
+        )
+      );
+    }
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
 
   useEffect(() => {
     let ignore = false;
@@ -42,7 +94,16 @@ export default function Layout() {
       <Header></Header>
       <main className="pb-20">
         {productData && filterData ? (
-          <Outlet context={[productData, filterData]}></Outlet>
+          <Outlet
+            context={[
+              productData,
+              filterData,
+              cart,
+              addToCart,
+              removeFromCart,
+              clearCart,
+            ]}
+          ></Outlet>
         ) : (
           <div>Loading...</div>
         )}

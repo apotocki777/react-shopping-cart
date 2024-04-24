@@ -16,7 +16,7 @@ export default function RelatedProducts({ product }) {
       </h3>
       <div className="grid grid-cols-4">
         {relatedProducts.map((item) => {
-          return <FeaturedSlide item={item}></FeaturedSlide>;
+          return <FeaturedSlide item={item} key={item.id}></FeaturedSlide>;
         })}
       </div>
     </div>

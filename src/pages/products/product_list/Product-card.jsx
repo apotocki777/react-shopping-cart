@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import AddToCartButton from "../../../utils/AddToCartButton";
+import { useOutletContext } from "react-router-dom";
 
 export default function ProductCard({ product, view }) {
+  const [, , , addToCart] = useOutletContext();
   const columnStyles = "grid grid-cols-[1fr_3fr] gap-4 p-2 shadow-xl";
   const gridStyles = "grid grid-cols-1 gap-4 p-2 shadow-xl";
   return (
@@ -56,7 +59,7 @@ export default function ProductCard({ product, view }) {
           {product.description}
         </p>
         <div className="mt-auto flex items-center gap-8">
-          <div className="rounded-full p-2 hover:bg-grey-2">
+          {/* <div className="rounded-full p-2 hover:bg-grey-2">
             <button className="flex">
               <svg
                 width="24"
@@ -79,7 +82,11 @@ export default function ProductCard({ product, view }) {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
+          <AddToCartButton
+            product={product}
+            onClick={addToCart}
+          ></AddToCartButton>
           <svg
             width="24"
             height="24"

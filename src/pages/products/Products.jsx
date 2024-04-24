@@ -47,15 +47,11 @@ export default function ProductPage() {
       ...viewOptions,
       [e.name]: e.value,
     });
-    // console.log(e);
-    // console.log(viewOptions);
   };
 
   const onPageChange = (e) => {
     setPage(Number.parseInt(e.target.value));
   };
-
-  console.log(page);
 
   const filteredData = filterProducts(productData, filters);
   const numberOfPages = Math.ceil(filteredData.length / viewOptions.perPage);
