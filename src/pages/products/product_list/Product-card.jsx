@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 export default function ProductCard({ product, view }) {
-  const columnStyles = "grid grid-cols-[1fr_3fr] gap-4 p-4 shadow-xl";
-  const gridStyles = "grid grid-cols-1 gap-4 p-4 shadow-xl";
+  const columnStyles = "grid grid-cols-[1fr_3fr] gap-4 p-2 shadow-xl";
+  const gridStyles = "grid grid-cols-1 gap-4 p-2 shadow-xl";
   return (
     <div className={view === "column" ? columnStyles : gridStyles}>
       <Link to={product.id}>

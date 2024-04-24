@@ -9,7 +9,7 @@ export default function ProductInfoCard({ product }) {
 
   return (
     <div className="bg-grey-1">
-      <div className="border-2 border-solid px-32 pb-10 pt-20">
+      <div className="px-32 pb-10 pt-20">
         <nav className="flex justify-start gap-16">
           <button
             onClick={(e) => handleTabClick(e)}

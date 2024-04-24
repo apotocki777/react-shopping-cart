@@ -1,6 +1,7 @@
 import { useParams, useOutletContext } from "react-router-dom";
 import ProductHero from "./Product-hero";
 import ProductInfoCard from "./product-info-card";
+import RelatedProducts from "./Product-related-products";
 
 export default function ProductDetails() {
   const [productData] = useOutletContext();
@@ -11,6 +12,7 @@ export default function ProductDetails() {
     <div className="">
       <ProductHero product={product}></ProductHero>
       <ProductInfoCard product={product}></ProductInfoCard>
+      <RelatedProducts product={product}></RelatedProducts>
     </div>
   );
 }

@@ -5,8 +5,8 @@ export default function ProductList({
   viewOptions: { view, perPage, sortBy },
   page,
 }) {
-  const columnStyles = "grid grid-cols-1 gap-6";
-  const gridStyles = "grid grid-cols-3 gap-6";
+  const columnStyles = "grid grid-cols-1 gap-6 mt-20";
+  const gridStyles = "grid grid-cols-3 gap-6 mt-20";
 
   const findProductsOnPage = (products, page, perPage) => {
     const start = (page - 1) * perPage;
