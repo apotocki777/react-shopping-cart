@@ -2,9 +2,9 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Link } from "react-router-dom";
 
-export default function TopHeader() {
+export default function TopHeader({ cart }) {
   return (
-    <div className="flex items-center justify-between bg-tertiary px-7 py-2 font-josefin text-lg text-white">
+    <div className="flex items-center justify-between bg-tertiary px-7 py-4 font-josefin text-lg text-white">
       <div className="ml-10 flex items-center gap-3">
         <MailOutlineIcon fontSize="small" />
         <p className="mr-5">something@something.com</p>
@@ -84,14 +84,24 @@ export default function TopHeader() {
           </li>
           <li>
             <Link to="cart">
-              <button className="m-0 flex items-center p-0">
+              <button className="group relative m-0 flex items-center p-0">
+                <div
+                  className={
+                    "absolute bottom-2 left-2 h-6 w-6 rounded-full bg-primary-dark transition-all group-hover:left-7 " +
+                    (cart.length === 0 ? "hidden" : "")
+                  }
+                >
+                  {cart.length !== 0
+                    ? cart.reduce((curr, acc) => curr + acc.quantity, 0)
+                    : null}
+                </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-5 w-5"
+                  className="h-5 w-5 transition-all group-hover:z-50 group-hover:scale-150 group-hover:stroke-2"
                 >
                   <path
                     strokeLinecap="round"

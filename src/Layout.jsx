@@ -91,7 +91,7 @@ export default function Layout() {
 
   return (
     <div className="mx-auto flex max-w-screen-2xl flex-col font-josefin">
-      <Header></Header>
+      <Header cart={cart}></Header>
       <main className="pb-20">
         {productData && filterData ? (
           <Outlet
