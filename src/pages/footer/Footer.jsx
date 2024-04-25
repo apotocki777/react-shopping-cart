@@ -103,7 +103,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="flex justify-between bg-grey-2 px-20 py-5">
+      <div className="flex items-center justify-between bg-grey-2 px-20 py-5">
         <p className="font-lato text-[14px] text-grey-3">
           ©Webecy - All Rights Reserved
         </p>

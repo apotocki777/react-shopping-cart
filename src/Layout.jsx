@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 export default function Layout() {
   const [productData, setProductData] = useState(null);
   const [filterData, setFilterData] = useState(null);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
@@ -69,6 +70,7 @@ export default function Layout() {
       );
       const data = await resp.json();
       setProductData(data);
+      setIsDataLoaded(true);
     }
 
     async function fetchFilterData() {
@@ -103,6 +105,7 @@ export default function Layout() {
               addToCart,
               removeFromCart,
               clearCart,
+              isDataLoaded,
             ]}
           ></Outlet>
         ) : (

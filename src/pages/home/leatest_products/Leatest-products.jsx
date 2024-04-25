@@ -1,11 +1,12 @@
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import LeatestProductCard from "./Leates-product-card";
+import LeatestProductLoader from "./Leatest-product-loader";
 
 export default function LeatestProducts() {
   const [category, setCategory] = useState("new");
 
-  const [data] = useOutletContext();
+  const [data, , , , , , isDataLoaded] = useOutletContext();
   let chosenData = [...data];
 
   if (category === "new") {
@@ -54,9 +55,16 @@ export default function LeatestProducts() {
         </li>
       </ul>
       <div className="grid grid-cols-3 gap-6">
-        {chosenData.map((item) => (
-          <LeatestProductCard item={item} key={item.id}></LeatestProductCard>
-        ))}
+        {isDataLoaded
+          ? chosenData.map((item) => (
+              <LeatestProductCard
+                item={item}
+                key={item.id}
+              ></LeatestProductCard>
+            ))
+          : [1, 2, 3, 4, 5, 6].map((el, index) => (
+              <LeatestProductLoader key={index}></LeatestProductLoader>
+            ))}
       </div>
     </div>
   );

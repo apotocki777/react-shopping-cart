@@ -7,7 +7,6 @@ import DiscountItems from "./discount_item/Discount-items";
 import TopCategories from "./top_categories/Top-categories";
 import Banner from "./banner/Banner";
 import LeatestBlog from "./leatest-blog/Leatest-blog";
-import { useEffect, useState } from "react";
 
 export default function Home() {
   return (

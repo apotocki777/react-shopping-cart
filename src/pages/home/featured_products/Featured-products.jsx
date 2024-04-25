@@ -2,10 +2,11 @@ import Slider from "react-slick";
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import FeaturedSlide from "./Featured-slide";
+import FeaturedSlideLoader from "./Featured-slide-loader";
 
 export default function FeaturedProducts() {
   const [currSlide, setCurrSlide] = useState(0);
-  const [data] = useOutletContext();
+  const [data, , , , , , isDataLoaded] = useOutletContext();
   const featuredItems = data.slice(0, 12);
   const carouselSettings = {
     dots: true,
@@ -61,9 +62,15 @@ export default function FeaturedProducts() {
       </h2>
       <div className=" border-primary">
         <Slider {...carouselSettings}>
-          {featuredItems.map((item) => {
-            return <FeaturedSlide item={item} key={item.id}></FeaturedSlide>;
-          })}
+          {isDataLoaded
+            ? featuredItems.map((item) => {
+                return (
+                  <FeaturedSlide item={item} key={item.id}></FeaturedSlide>
+                );
+              })
+            : [1, 2, 3, 4].map((el, index) => (
+                <FeaturedSlideLoader key={index}></FeaturedSlideLoader>
+              ))}
         </Slider>
       </div>
     </div>

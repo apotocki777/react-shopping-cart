@@ -1,8 +1,10 @@
 import { useOutletContext } from "react-router-dom";
 import AddToCartButton from "../../../utils/AddToCartButton";
+import { useState } from "react";
 
 export default function LeatestProductCard({ item }) {
   const [, , , addToCart] = useOutletContext();
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   return (
     <div>
       <div className="group relative">
@@ -33,7 +35,14 @@ export default function LeatestProductCard({ item }) {
             />
           </svg>
         </div>
-        <img src={item.imageSet[0]} alt={item.description} />
+        {!isImageLoaded ? (
+          <div className="h-[294px] w-[440px] bg-grey-1"></div>
+        ) : null}
+        <img
+          src={item.imageSet[0]}
+          alt={item.description}
+          onLoad={() => setIsImageLoaded(true)}
+        />
       </div>
       <div className="mt-2 flex">
         <p className="tetx-primary">{item.name}</p>
