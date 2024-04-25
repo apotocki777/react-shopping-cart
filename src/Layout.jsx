@@ -1,4 +1,5 @@
 import Header from "./pages/header/Header";
+import Footer from "./pages/footer/Footer";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -90,7 +91,7 @@ export default function Layout() {
   }, []);
 
   return (
-    <div className="mx-auto flex max-w-screen-2xl flex-col font-josefin">
+    <div className="mx-auto flex min-h-screen max-w-screen-2xl flex-col font-josefin">
       <Header cart={cart}></Header>
       <main className="pb-20">
         {productData && filterData ? (
@@ -108,6 +109,7 @@ export default function Layout() {
           <div>Loading...</div>
         )}
       </main>
+      <Footer></Footer>
     </div>
   );
 }
