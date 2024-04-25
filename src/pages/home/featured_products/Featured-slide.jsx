@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import AddToCartButton from "../../../utils/AddToCartButton";
+
 export default function FeaturedSlide({ item }) {
+  const [, , , addToCart] = useOutletContext();
   return (
     <div className="group z-10 mx-auto my-0 mb-10 mt-8 flex h-[80%] w-[80%] flex-col items-center justify-center rounded-md shadow-xl transition-all hover:-translate-y-4 hover:shadow-2xl">
       <div className="relative">
         <div className="absolute left-2 top-2 hidden items-center gap-3 group-hover:flex">
-          <div className="rounded-full bg-grey-2 p-2">
-            <button className="flex">
+          {/* <div className="rounded-full bg-grey-2 p-2">
+            <button className="flex" onClick={() => addToCart(item)}>
               <svg
                 width="24"
                 height="24"
@@ -26,7 +31,8 @@ export default function FeaturedSlide({ item }) {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
+          <AddToCartButton onClick={addToCart} product={item}></AddToCartButton>
           <svg
             width="24"
             height="24"
@@ -58,7 +64,9 @@ export default function FeaturedSlide({ item }) {
           className="rounded-md"
         />
         <div className="absolute left-[50%] top-36 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
-          <button>View Details</button>
+          <Link to={"../products/" + item.id}>
+            <button>View Details</button>
+          </Link>
         </div>
       </div>
       <div className="flex w-full flex-col items-center justify-center gap-3 py-4">

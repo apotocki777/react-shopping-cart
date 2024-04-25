@@ -1,6 +1,6 @@
 import Header from "./pages/header/Header";
 import Footer from "./pages/footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Layout() {
@@ -110,6 +110,7 @@ export default function Layout() {
         )}
       </main>
       <Footer></Footer>
+      <ScrollRestoration></ScrollRestoration>
     </div>
   );
 }
