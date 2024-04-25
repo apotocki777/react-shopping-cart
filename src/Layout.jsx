@@ -65,8 +65,8 @@ export default function Layout() {
 
     async function fetchProductData() {
       const resp = await fetch(
-        // "https://vercel-api-one-gamma.vercel.app/products"
-        "http://localhost:3000/products"
+        "https://vercel-api-one-gamma.vercel.app/products"
+        // "http://localhost:3000/products"
       );
       const data = await resp.json();
       setProductData(data);
@@ -75,8 +75,8 @@ export default function Layout() {
 
     async function fetchFilterData() {
       const resp = await fetch(
-        // "https://vercel-api-one-gamma.vercel.app/filters"
-        "http://localhost:3000/filters"
+        "https://vercel-api-one-gamma.vercel.app/filters"
+        // "http://localhost:3000/filters"
       );
       const data = await resp.json();
       setFilterData(data);
@@ -109,7 +109,9 @@ export default function Layout() {
             ]}
           ></Outlet>
         ) : (
-          <div>Loading...</div>
+          <div className="flex h-[80vh] items-center justify-center text-4xl text-black">
+            Loading...
+          </div>
         )}
       </main>
       <Footer></Footer>
