@@ -1,5 +1,5 @@
 import Button from "../../../utils/Button";
-import LampPhoto from "../../../resources/images/Lamp.png";
+import LampPhoto from "../../../resources/images/lamp.png";
 import HeadphonesPhoto from "../../../resources/images/headphones.png";
 
 export default function HeroSlide() {
