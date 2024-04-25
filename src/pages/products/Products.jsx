@@ -66,11 +66,12 @@ export default function ProductPage() {
   return (
     <main className="flex flex-col items-center justify-center py-10">
       <h1 className="text-[52px] font-bold text-black">Products</h1>
-      <ul className="flex gap-4 font-lato font-normal text-grey-3">
-        <li>
+      <ul className="flex items-center gap-4 font-lato font-normal text-grey-3">
+        <li className="hover:underline">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className="h-1 w-1 rounded-full bg-grey-3"></li>
+        <li className="hover:underline">
           <Link>Products</Link>
         </li>
       </ul>
