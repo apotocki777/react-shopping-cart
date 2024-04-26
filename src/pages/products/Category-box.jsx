@@ -13,6 +13,7 @@ const CategoryBox = ({ values, bgColor, checkedColor, name, onChecked }) => {
               bgColor={bgColor}
               checkedColor={checkedColor}
               name={name}
+              isRating={false}
             />
           </div>
         </div>
