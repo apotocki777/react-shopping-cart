@@ -1,3 +1,5 @@
+import CustomCheckbox from "./Custom-checkbox";
+
 const RatingCategoryBox = ({
   values,
   bgColor,
@@ -20,9 +22,11 @@ const RatingCategoryBox = ({
                 name={name}
                 value={value}
                 className="group peer hidden"
-                onChange={onChecked}
+                onChange={(e) => {
+                  onChecked(e);
+                }}
               />
-              <span
+              {/* <span
                 className={
                   "inline-flex h-6 w-6 items-center justify-center rounded-md peer-checked:*:block" +
                   " peer-checked:" +
@@ -44,7 +48,15 @@ const RatingCategoryBox = ({
                     fill="white"
                   />
                 </svg>
-              </span>
+              </span> */}
+              <CustomCheckbox
+                bgColor={bgColor}
+                checkedColor={checkedColor}
+                name={name}
+                onChecked={onChecked}
+                value={value}
+                showValues={false}
+              />
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((item, index) => {
                   return (
