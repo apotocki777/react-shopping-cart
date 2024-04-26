@@ -23,17 +23,21 @@ export default function ProductList({
   });
   const productsOnPage = findProductsOnPage(ProductList, page, perPage);
 
-  //   console.log(productsOnPage);
-
   return (
     <div className={view === "column" ? columnStyles : gridStyles}>
-      {productsOnPage.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          view={view}
-        ></ProductCard>
-      ))}
+      {productsOnPage.length !== 0 ? (
+        productsOnPage.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            view={view}
+          ></ProductCard>
+        ))
+      ) : (
+        <div className="flex min-w-[1300px] justify-center">
+          <h1 className="text-4xl text-black">No products found</h1>
+        </div>
+      )}
     </div>
   );
 }
