@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function SearchBar({ placeholder, buttonText, margin }) {
   return (
     <div
@@ -10,9 +12,9 @@ export default function SearchBar({ placeholder, buttonText, margin }) {
       <input
         type="search"
         placeholder={placeholder}
-        className="p-1 focus:border-0 focus:outline-0"
+        className="p-1 focus:border-none focus:outline-none"
       />
-      <button className="h-full rounded-md bg-primary px-2 py-1 text-[12px] text-[#ffff]">
+      <button className="h-full min-w-fit rounded-md bg-primary px-2 py-1 text-[12px] text-[#ffff]">
         {buttonText}
       </button>
     </div>
