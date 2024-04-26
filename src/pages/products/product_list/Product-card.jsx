@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import AddToCartButton from "../../../utils/AddToCartButton";
 import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
 
 export default function ProductCard({ product, view }) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [, , , addToCart] = useOutletContext();
   const columnStyles = "grid grid-cols-[1fr_3fr] gap-4 p-2 shadow-xl";
   const gridStyles = "grid grid-cols-1 gap-4 p-2 shadow-xl";
@@ -10,7 +12,14 @@ export default function ProductCard({ product, view }) {
     <div className={view === "column" ? columnStyles : gridStyles}>
       <Link to={product.id}>
         <div className="cursor-pointer">
-          <img src={product.imageSet[0]} alt={product.name} />
+          {!isImageLoaded ? (
+            <div className="h-[235px] w-[352px] bg-grey-1"></div>
+          ) : null}
+          <img
+            src={product.imageSet[0]}
+            alt={product.name}
+            onLoad={() => setIsImageLoaded(true)}
+          />
         </div>
       </Link>
       <div
