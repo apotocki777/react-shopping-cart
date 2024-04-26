@@ -7,7 +7,7 @@ export default function FeaturedSlide({ item }) {
   const [, , , addToCart] = useOutletContext();
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   return (
-    <div className="group z-10 mx-auto my-0 mb-10 mt-8 flex h-[80%] w-[80%] flex-col items-center justify-center rounded-md shadow-xl transition-all hover:-translate-y-4 hover:shadow-2xl">
+    <div className="group z-10 mx-auto my-0 mb-10 mt-8 flex h-[69%] w-[69%] flex-col items-center justify-center rounded-md pb-4 shadow-xl transition-all hover:-translate-y-4 hover:shadow-2xl">
       <div className="relative">
         <div className="absolute left-2 top-2 hidden items-center gap-3 group-hover:flex">
           <AddToCartButton onClick={addToCart} product={item}></AddToCartButton>

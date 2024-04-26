@@ -3,7 +3,7 @@ import Button from "../../utils/Button";
 import { Link } from "react-router-dom";
 export default function EmptyCart() {
   return (
-    <div className="mt-20 flex flex-col items-center justify-center">
+    <div className="mt-20 flex flex-col items-center justify-center pb-20">
       <div>
         <img
           src={EmptyCartPhoto}

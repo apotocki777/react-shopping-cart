@@ -61,10 +61,8 @@ export default function ProductPage() {
     arrOfPages.push(i + 1);
   }
 
-  // console.log(filteredData[0]);
-
   return (
-    <main className="flex flex-col items-center justify-center py-10">
+    <main className="flex flex-col items-center justify-center px-32 py-10">
       <h1 className="text-[52px] font-bold text-black">Products</h1>
       <ul className="flex items-center gap-4 font-lato font-normal text-grey-3">
         <li className="hover:underline">

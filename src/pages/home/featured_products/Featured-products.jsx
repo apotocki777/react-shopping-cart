@@ -60,7 +60,7 @@ export default function FeaturedProducts() {
       <h2 className="mb-10 mt-24 self-center text-5xl font-bold">
         Featured Products
       </h2>
-      <div className=" border-primary">
+      <div className="">
         <Slider {...carouselSettings}>
           {isDataLoaded
             ? featuredItems.map((item) => {

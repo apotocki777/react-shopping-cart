@@ -95,7 +95,7 @@ export default function Layout() {
   return (
     <div className="mx-auto flex min-h-screen flex-col items-center font-josefin">
       <Header cart={cart}></Header>
-      <main className="max-w-screen-2xl">
+      <main className="max-w-full">
         {productData && filterData ? (
           <Outlet
             context={[
