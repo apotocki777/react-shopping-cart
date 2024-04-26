@@ -1,8 +1,32 @@
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function TopHeader({ cart }) {
+  const [isEnglishDropdownOpen, setEnglishDropdownOpen] = useState(false);
+  const [isCurrencyDropdownOpen, setCurrencyDropdownOpen] = useState(false);
+  const [chosenLanguage, setChosenLanguage] = useState("English");
+  const [chosenCurrency, setChosenCurrency] = useState("USD");
+
+  const toggleEnglishDropdown = () => {
+    setEnglishDropdownOpen(!isEnglishDropdownOpen);
+  };
+
+  const toggleCurrencyDropdown = () => {
+    setCurrencyDropdownOpen(!isCurrencyDropdownOpen);
+  };
+
+  const handleLanguageChange = (e) => {
+    setChosenLanguage(e.target.innerText);
+    toggleEnglishDropdown();
+  };
+
+  const handleCurrencyChange = (e) => {
+    setChosenCurrency(e.target.innerText);
+    toggleCurrencyDropdown();
+  };
+
   return (
     <div className="flex items-center justify-between bg-tertiary px-32 py-4 font-josefin text-lg text-white">
       <div className="flex items-center gap-3">
@@ -14,39 +38,79 @@ export default function TopHeader({ cart }) {
 
       <div>
         <ul className="flex flex-row items-center gap-4">
-          <li className="flex items-center gap-1">
-            <p>English</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
+          <li className="relative flex items-center gap-1">
+            <p>{chosenLanguage}</p>
+            <button onClick={() => toggleEnglishDropdown()}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="h-4 w-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+            {isEnglishDropdownOpen && (
+              <ul className="absolute left-0 top-full z-50 mt-2 w-full min-w-max rounded-md bg-grey-1 p-2 text-primary shadow-lg ring-1 ring-black ring-opacity-5">
+                <li>
+                  <button onClick={(e) => handleLanguageChange(e)}>
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button onClick={(e) => handleLanguageChange(e)}>
+                    Spanish
+                  </button>
+                </li>
+                <li>
+                  <button onClick={(e) => handleLanguageChange(e)}>
+                    French
+                  </button>
+                </li>
+              </ul>
+            )}
           </li>
-          <li className="flex items-center gap-1">
-            <p>USD</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-4 w-4"
+          <li className="relative flex w-14 items-center gap-1">
+            <p>{chosenCurrency}</p>
+            <button
+              onClick={() => {
+                toggleCurrencyDropdown();
+              }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="h-4 w-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+            {isCurrencyDropdownOpen && (
+              <ul className="absolute left-0 top-full z-50 mt-2 w-full min-w-max rounded-md bg-grey-1 p-2 text-primary shadow-lg ring-1 ring-black ring-opacity-5">
+                <li>
+                  <button onClick={(e) => handleCurrencyChange(e)}>USD</button>
+                </li>
+                <li>
+                  <button onClick={(e) => handleCurrencyChange(e)}>EUR</button>
+                </li>
+                <li>
+                  <button onClick={(e) => handleCurrencyChange(e)}>GBP</button>
+                </li>
+              </ul>
+            )}
           </li>
           <li className="mr-2 flex items-center gap-2">
             <p className="">Login</p>
