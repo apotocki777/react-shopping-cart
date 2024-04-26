@@ -10,7 +10,7 @@ export default function RelatedProducts({ product }) {
   console.log(relatedProducts);
 
   return (
-    <div className="px-32">
+    <div className="px-44">
       <h3 className="mt-10 text-left text-[36px] font-bold">
         Related Products
       </h3>

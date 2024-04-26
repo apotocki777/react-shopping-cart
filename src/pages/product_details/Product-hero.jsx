@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../../utils/Button";
 import { useOutletContext } from "react-router-dom";
 
 export default function ProductHero({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.imageSet[0]);
   const [, , , addToCart] = useOutletContext();
+
+  useEffect(() => {
+    setSelectedImage(product.imageSet[0]);
+  }, [product]);
 
   const handleImageClick = (e) => {
     setSelectedImage(e.target.src);

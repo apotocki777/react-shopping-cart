@@ -5,7 +5,7 @@ import LivinfRoomThree from "../../../resources/images/living-room-3.png";
 
 export default function LeatestBlog() {
   return (
-    <div className="mt-20 text-center">
+    <div className="mt-20 px-40 text-center">
       <h2 className="text-[44px] font-bold text-black">Leatest Blog</h2>
       <div className="flex gap-10">
         <BlogCard

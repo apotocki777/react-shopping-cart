@@ -36,7 +36,7 @@ export default function FeaturedSlide({ item }) {
             />
           </svg>
         </div>
-        <div className="relative h-44 w-72 p-1">
+        <div className="relative h-44 w-64 p-1">
           {!imageIsLoaded && (
             <div className="absolute left-0 top-0 h-72 w-60 bg-grey-1"></div>
           )}
