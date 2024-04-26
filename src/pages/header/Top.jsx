@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export default function TopHeader({ cart }) {
   return (
-    <div className="flex items-center justify-between bg-tertiary px-7 py-4 font-josefin text-lg text-white">
-      <div className="ml-10 flex items-center gap-3">
+    <div className="flex items-center justify-between bg-tertiary px-32 py-4 font-josefin text-lg text-white">
+      <div className="flex items-center gap-3">
         <MailOutlineIcon fontSize="small" />
         <p className="mr-5">something@something.com</p>
         <PhoneInTalkIcon fontSize="small" />
@@ -13,7 +13,7 @@ export default function TopHeader({ cart }) {
       </div>
 
       <div>
-        <ul className="mr-10 flex flex-row items-center gap-4">
+        <ul className="flex flex-row items-center gap-4">
           <li className="flex items-center gap-1">
             <p>English</p>
             <svg

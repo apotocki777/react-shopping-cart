@@ -3,7 +3,7 @@ import SearchBar from "../../utils/Search-bar";
 export default function Footer() {
   return (
     <footer className="">
-      <div className="grid grid-cols-4 bg-grey-1 px-10 py-20">
+      <div className="grid grid-cols-4 bg-grey-1 px-32 py-20">
         <div className="flex flex-col gap-5 pr-24">
           <svg
             width="100"

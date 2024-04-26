@@ -36,16 +36,20 @@ export default function FeaturedSlide({ item }) {
             />
           </svg>
         </div>
-        {!imageIsLoaded ? <div className="h-72 w-60 bg-grey-1"></div> : null}
-        <img
-          src={item.imageSet[0]}
-          alt={item.description}
-          className="rounded-md"
-          onLoad={() => {
-            setImageIsLoaded(true);
-          }}
-        />
-        <div className="absolute left-[50%] top-36 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
+        <div className="relative h-44 w-72 p-1">
+          {!imageIsLoaded && (
+            <div className="absolute left-0 top-0 h-72 w-60 bg-grey-1"></div>
+          )}
+          <img
+            src={item.imageSet[0]}
+            alt={item.description}
+            className="h-full w-full rounded-md object-cover"
+            onLoad={() => {
+              setImageIsLoaded(true);
+            }}
+          />
+        </div>
+        <div className="absolute left-[50%] top-32 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
           <Link to={"../products/" + item.id}>
             <button>View Details</button>
           </Link>
