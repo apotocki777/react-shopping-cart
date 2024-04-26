@@ -56,11 +56,11 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <div className="flex h-fit flex-col justify-center px-20">
+    <div className="flex h-fit flex-col justify-center px-44">
       <h2 className="mb-10 mt-24 self-center text-5xl font-bold">
         Featured Products
       </h2>
-      <div className=" border-primary">
+      <div className="">
         <Slider {...carouselSettings}>
           {isDataLoaded
             ? featuredItems.map((item) => {

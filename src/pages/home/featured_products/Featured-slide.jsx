@@ -7,7 +7,7 @@ export default function FeaturedSlide({ item }) {
   const [, , , addToCart] = useOutletContext();
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   return (
-    <div className="group z-10 mx-auto my-0 mb-10 mt-8 flex h-[80%] w-[80%] flex-col items-center justify-center rounded-md shadow-xl transition-all hover:-translate-y-4 hover:shadow-2xl">
+    <div className="group z-10 mx-auto my-0 mb-10 mt-8 flex h-[69%] w-[69%] flex-col items-center justify-center rounded-md pb-4 shadow-xl transition-all hover:-translate-y-4 hover:shadow-2xl">
       <div className="relative">
         <div className="absolute left-2 top-2 hidden items-center gap-3 group-hover:flex">
           <AddToCartButton onClick={addToCart} product={item}></AddToCartButton>
@@ -36,16 +36,20 @@ export default function FeaturedSlide({ item }) {
             />
           </svg>
         </div>
-        {!imageIsLoaded ? <div className="h-72 w-60 bg-grey-1"></div> : null}
-        <img
-          src={item.imageSet[0]}
-          alt={item.description}
-          className="rounded-md"
-          onLoad={() => {
-            setImageIsLoaded(true);
-          }}
-        />
-        <div className="absolute left-[50%] top-36 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
+        <div className="relative h-44 w-64 p-1">
+          {!imageIsLoaded && (
+            <div className="absolute left-0 top-0 h-72 w-60 bg-grey-1"></div>
+          )}
+          <img
+            src={item.imageSet[0]}
+            alt={item.description}
+            className="h-full w-full rounded-md object-cover"
+            onLoad={() => {
+              setImageIsLoaded(true);
+            }}
+          />
+        </div>
+        <div className="absolute left-[50%] top-32 ml-[-55px] hidden w-[110px] rounded-md bg-success px-2 py-1 text-[#ffff] group-hover:block">
           <Link to={"../products/" + item.id}>
             <button>View Details</button>
           </Link>

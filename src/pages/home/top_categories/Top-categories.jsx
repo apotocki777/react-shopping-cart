@@ -24,7 +24,7 @@ export default function TopCategories() {
   };
 
   return (
-    <div className="text-center">
+    <div className="px-44 text-center">
       <h2 className="text-[44px] font-bold text-black">Top Categories</h2>
       <div className="px-44 py-5">
         <Slider {...sliderSettings}>

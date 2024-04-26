@@ -18,10 +18,10 @@ const SearchIcon = (
 
 export default function BottomHeader() {
   return (
-    <div className="items-centerpx-7 flex h-fit w-full px-7 py-3">
-      <div className="flex items-center gap-12">
+    <div className="items-centerpx-7 flex h-fit w-full px-32 py-3">
+      <div className="flex items-center justify-center gap-12 ">
         <svg
-          className="ml-10"
+          className=""
           width="100"
           height="28"
           viewBox="0 0 100 28"
@@ -69,7 +69,7 @@ export default function BottomHeader() {
       </div>
 
       <SearchBar
-        margin="ml-auto mr-8"
+        margin="ml-auto"
         placeholder="search"
         buttonText={SearchIcon}
       ></SearchBar>

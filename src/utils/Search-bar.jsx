@@ -1,5 +1,3 @@
-import Button from "./Button";
-
 export default function SearchBar({ placeholder, buttonText, margin }) {
   return (
     <div

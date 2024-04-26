@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../../utils/Button";
 import { useOutletContext } from "react-router-dom";
 
@@ -6,13 +6,17 @@ export default function ProductHero({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.imageSet[0]);
   const [, , , addToCart] = useOutletContext();
 
+  useEffect(() => {
+    setSelectedImage(product.imageSet[0]);
+  }, [product]);
+
   const handleImageClick = (e) => {
     setSelectedImage(e.target.src);
   };
 
   console.log(product);
   return (
-    <div className="grid grid-cols-[1fr_3fr_3fr] gap-8 px-16 py-24">
+    <div className="grid grid-cols-[1fr_3fr_3fr] gap-8 px-32 py-24">
       <div className="flex flex-col justify-between gap-4">
         <img
           src={product.imageSet[0]}
