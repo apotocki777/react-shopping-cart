@@ -12,7 +12,7 @@ export default function CustomCheckbox({
   return (
     <label
       htmlFor={value}
-      className="flex items-center gap-4 font-lato text-[16px] text-grey-3"
+      className="flex items-center gap-4 font-lato text-[16px] text-grey-3 hover:cursor-pointer"
     >
       <input
         type="checkbox"
@@ -23,7 +23,6 @@ export default function CustomCheckbox({
         onChange={(e) => {
           onChecked(e);
           setChecked(!checked);
-          console.log(checked);
         }}
       />
       <span
