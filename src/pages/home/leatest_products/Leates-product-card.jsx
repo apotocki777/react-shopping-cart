@@ -8,9 +8,9 @@ export default function LeatestProductCard({ item }) {
   return (
     <div>
       <div className="group relative">
-        <div className="absolute left-4 top-40 hidden items-center gap-5 group-hover:flex group-hover:flex-col">
+        <div className="absolute left-4 top-[38%] hidden items-center gap-3 group-hover:flex group-hover:flex-col">
           <AddToCartButton onClick={addToCart} product={item}></AddToCartButton>
-          <button>
+          <button className="p-2 hover:rounded-full hover:bg-grey-2">
             <svg
               width="24"
               height="24"
@@ -24,7 +24,7 @@ export default function LeatestProductCard({ item }) {
               />
             </svg>
           </button>
-          <button>
+          <button className="p-2 hover:rounded-full hover:bg-grey-2">
             <svg
               width="24"
               height="24"

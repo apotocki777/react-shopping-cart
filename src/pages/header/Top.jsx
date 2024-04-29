@@ -38,9 +38,12 @@ export default function TopHeader({ cart }) {
 
       <div>
         <ul className="flex flex-row items-center gap-4">
-          <li className="relative flex items-center gap-1">
+          <li
+            onClick={() => toggleEnglishDropdown()}
+            className="relative flex items-center gap-1 hover:cursor-pointer"
+          >
             <p>{chosenLanguage}</p>
-            <button onClick={() => toggleEnglishDropdown()}>
+            <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -76,13 +79,12 @@ export default function TopHeader({ cart }) {
               </ul>
             )}
           </li>
-          <li className="relative flex w-14 items-center gap-1">
+          <li
+            onClick={() => toggleCurrencyDropdown()}
+            className="relative flex w-14 items-center gap-1 hover:cursor-pointer"
+          >
             <p>{chosenCurrency}</p>
-            <button
-              onClick={() => {
-                toggleCurrencyDropdown();
-              }}
-            >
+            <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

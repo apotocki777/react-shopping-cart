@@ -1,8 +1,8 @@
 export default function TopCategoriesSlide({ element }) {
   console.log(element.name, "name");
   return (
-    <div className="py-20 text-center">
-      <div className="group mx-auto mb-4 h-[14rem] w-[14rem] rounded-full bg-grey-3 shadow-lg transition-all hover:-translate-y-5 hover:shadow-xl">
+    <div className="max-w-fit py-20 text-center">
+      <div className="group mx-auto mb-4 h-[14rem] w-[14rem] rounded-full bg-grey-3 shadow-lg transition-all hover:-translate-y-5 hover:shadow-xl max-[1640px]:h-[10rem] max-[1640px]:w-[10rem]">
         <div className="relative h-full w-full rounded-full transition-all group-hover:-translate-y-2 group-hover:translate-x-2">
           <img
             src={element.imageSet[0]}
